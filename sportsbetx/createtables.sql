@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS odds (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    league TEXT UNIQUE NOT NULL,
+    home_team TEXT UNIQUE NOT NULL,
+    away_team TEXT UNIQUE NOT NULL,
+    home_team_win_odds FLOAT NOT NULL, 
+    away_team_win_odds FLOAT NOT NULL,
+    draw_odds FLOAT NOT NULL,
+    game_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

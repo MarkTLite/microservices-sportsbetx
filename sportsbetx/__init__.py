@@ -24,4 +24,8 @@ def create_app(test_config=None):
     def setup():
         return "Setup route"
 
+    # register extended parts.
+    from . import db
+    db.init_app(app)
+
     return app

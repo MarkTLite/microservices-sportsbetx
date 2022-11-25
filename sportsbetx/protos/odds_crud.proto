@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+service OddsCrud{
+    //A simple RPC for creating odds 
+    rpc CreateOdds(DataDict) returns (DBResponse) {}
+
+    //A simple RPC for reag odds 
+    rpc ReadOdds(DataDict) returns (stream DBResponse) {}
+
+    //A simple RPC for Updating odds 
+    rpc UpdateOdds(DataDict) returns (DBResponse) {}
+
+    //A simple RPC for deleting odds 
+    rpc DeleteOdds(DataDict) returns (DBResponse) {}
+
+}
+
+message DataDict{
+    string league = 1;
+    string home_team = 2;
+    string away_team = 3;
+    float home_team_win_odds = 4;
+    float away_team_win_odds = 5;
+    float draw_odds =6;
+    string game_date = 7;
+    string odds_id = 8;
+    string date_range = 9;
+    string user_id = 10;
+}
+message DBResponse{
+    bool status = 1;
+    string message = 2;
+    DataDict data = 3;
+}

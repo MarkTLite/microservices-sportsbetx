@@ -4,6 +4,7 @@ import os
 class Config:
     DEBUG = False
     DEVELOPMENT = False
+    DATABASE = 'postgresql'
     SECRET_KEY = os.getenv("SECRET_KEY", "default-key")
 
 class ProductionConfig(Config):
